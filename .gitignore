@@ -1,0 +1,51 @@
+# gradle
+.gradle
+build
+gradle-app.setting
+
+# GMCP plugin
+/minecraft
+
+# eclipse
+.settings
+.metadata
+.classpath
+.project
+bin
+
+# intellij
+out
+*.idea
+*.iml
+
+# logs
+*.log
+*.log.gz
+
+# server
+eclipse/banned-ips.txt
+eclipse/banned-players.txt
+eclipse/config*
+eclipse/logs*
+eclipse/mods*
+eclipse/ops*
+eclipse/options*
+eclipse/resourcepacks*
+eclipse/saves*
+eclipse/server.properties
+eclipse/servers.dat
+eclipse/white-list.txt
+eclipse/world*
+
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*

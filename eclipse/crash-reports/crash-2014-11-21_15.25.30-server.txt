@@ -1,0 +1,98 @@
+---- Minecraft Crash Report ----
+// This doesn't make any sense!
+
+Time: 11/21/14 3:25 PM
+Description: Ticking player
+
+java.lang.IllegalArgumentException: Modifier is already applied on this attribute!
+	at net.minecraft.entity.ai.attributes.ModifiableAttributeInstance.applyModifier(ModifiableAttributeInstance.java:91)
+	at net.minecraft.potion.Potion.applyAttributesModifiersToEntity(Potion.java:350)
+	at net.minecraft.entity.EntityLivingBase.onChangedPotionEffect(EntityLivingBase.java:778)
+	at net.minecraft.entity.player.EntityPlayerMP.onChangedPotionEffect(EntityPlayerMP.java:1007)
+	at net.minecraft.entity.EntityLivingBase.addPotionEffect(EntityLivingBase.java:707)
+	at playertraits.traits.StrengthTrait.tick(StrengthTrait.java:15)
+	at playertraits.TraitManager.tick(TraitManager.java:31)
+	at playertraits.PlayerTraits.onTick(PlayerTraits.java:57)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_5_PlayerTraits_onTick_PlayerTickEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:51)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:122)
+	at cpw.mods.fml.common.FMLCommonHandler.onPlayerPreTick(FMLCommonHandler.java:344)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:260)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:337)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayer(NetHandlerPlayServer.java:326)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:37)
+	at net.minecraft.network.play.client.C03PacketPlayer$C04PacketPlayerPosition.processPacket(C03PacketPlayer.java:163)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:226)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:710)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:598)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:472)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:736)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.entity.ai.attributes.ModifiableAttributeInstance.applyModifier(ModifiableAttributeInstance.java:91)
+	at net.minecraft.potion.Potion.applyAttributesModifiersToEntity(Potion.java:350)
+	at net.minecraft.entity.EntityLivingBase.onChangedPotionEffect(EntityLivingBase.java:778)
+	at net.minecraft.entity.player.EntityPlayerMP.onChangedPotionEffect(EntityPlayerMP.java:1007)
+	at net.minecraft.entity.EntityLivingBase.addPotionEffect(EntityLivingBase.java:707)
+	at playertraits.traits.StrengthTrait.tick(StrengthTrait.java:15)
+	at playertraits.TraitManager.tick(TraitManager.java:31)
+	at playertraits.PlayerTraits.onTick(PlayerTraits.java:57)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_5_PlayerTraits_onTick_PlayerTickEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:51)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:122)
+	at cpw.mods.fml.common.FMLCommonHandler.onPlayerPreTick(FMLCommonHandler.java:344)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:260)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 223
+	Entity Name: Player6
+	Entity's Exact location: 102.32, 67.00, -360.89
+	Entity's Block location: World: (102,67,-361), Chunk: (at 6,4,7 in 6,-23; contains blocks 96,0,-368 to 111,255,-353), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:337)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayer(NetHandlerPlayServer.java:326)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:37)
+	at net.minecraft.network.play.client.C03PacketPlayer$C04PacketPlayerPosition.processPacket(C03PacketPlayer.java:163)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:226)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@21983b3a
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:710)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:598)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:472)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:736)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Mac OS X (x86_64) version 10.10
+	Java Version: 1.7.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 700714104 bytes (668 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 6361 (356216 bytes; 0 MB) allocated, 6361 (356216 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.03 FML v7.2.211.1121 Minecraft Forge 10.12.2.1121 4 mods loaded, 4 mods active
+	mcp{9.03} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	FML{7.2.211.1121} [Forge Mod Loader] (forgeSrc-1.7.2-10.12.2.1121.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Forge{10.12.2.1121} [Minecraft Forge] (forgeSrc-1.7.2-10.12.2.1121.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	playertraits{1.0} [Player Traits] (bin) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 2217 (124152 bytes; 0 MB) allocated, 1936 (108416 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player6'/223, l='Mod Test', x=102.32, y=67.00, z=-360.89]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

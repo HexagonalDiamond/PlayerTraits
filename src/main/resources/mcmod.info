@@ -1,0 +1,16 @@
+[
+{
+  "modid": "playertraits",
+  "name": "Player Traits",
+  "description": "Gives the player random traits.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["jmeyer2k"],
+  "credits": "MEEEE!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
